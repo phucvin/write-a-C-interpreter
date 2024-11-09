@@ -1,0 +1,56 @@
+1: #include <stdio.h>
+2: 
+3: int fib(int n) {
+4:     if (n < 2) {
+    ENT  0
+    LEA  2
+    LI  
+    PUSH
+    IMM  2
+    LT  
+    JZ   0
+5:         return n;
+    LEA  2
+    LI  
+6:     }
+    LEV 
+7:     return fib(n-1) + fib(n-2);
+    LEA  2
+    LI  
+    PUSH
+    IMM  1
+    SUB 
+    PUSH
+    CALL -1895251944
+    ADJ  1
+    PUSH
+    LEA  2
+    LI  
+    PUSH
+    IMM  2
+    SUB 
+    PUSH
+    CALL -1895251944
+    ADJ  1
+    ADD 
+8: }
+    LEV 
+    LEV 
+9: 
+10: int main() {
+11:     printf("fib(40) = %d\n", fib(40));
+    ENT  0
+    IMM  -1895518192
+    PUSH
+    IMM  40
+    PUSH
+    CALL -1895251944
+    ADJ  1
+    PUSH
+    PRTF
+    ADJ  2
+12:     return 0;
+    IMM  0
+13: }
+    LEV 
+    LEV 

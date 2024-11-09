@@ -1,0 +1,84 @@
+1: #include <stdio.h>
+2: 
+3: int fibonacci(int i) {
+4:     if (i <= 1) {
+    ENT  0
+    LEA  2
+    LI  
+    PUSH
+    IMM  1
+    LE  
+    JZ   0
+5:         return 1;
+    IMM  1
+6:     }
+    LEV 
+7:     return fibonacci(i-1) + fibonacci(i-2);
+    LEA  2
+    LI  
+    PUSH
+    IMM  1
+    SUB 
+    PUSH
+    CALL 2101776408
+    ADJ  1
+    PUSH
+    LEA  2
+    LI  
+    PUSH
+    IMM  2
+    SUB 
+    PUSH
+    CALL 2101776408
+    ADJ  1
+    ADD 
+8: }
+    LEV 
+    LEV 
+9: 
+10: int main()
+11: {
+12:     int i;
+13:     i = 0;
+    ENT  1
+    LEA  -1
+    PUSH
+    IMM  0
+    SI  
+14:     while (i <= 10) {
+    LEA  -1
+    LI  
+    PUSH
+    IMM  10
+    LE  
+    JZ   0
+15:         printf("fibonacci(%2d) = %d\n", i, fibonacci(i));
+    IMM  2101510160
+    PUSH
+    LEA  -1
+    LI  
+    PUSH
+    LEA  -1
+    LI  
+    PUSH
+    CALL 2101776408
+    ADJ  1
+    PUSH
+    PRTF
+    ADJ  3
+16:         i = i + 1;
+    LEA  -1
+    PUSH
+    LEA  -1
+    LI  
+    PUSH
+    IMM  1
+    ADD 
+    SI  
+17:     }
+18:     return 0;
+    JMP  2101776808
+    IMM  0
+19: }
+    LEV 
+    LEV 
