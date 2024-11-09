@@ -1,0 +1,26 @@
+1: int main() {
+2:     int a, b, c;
+3:     a = 2;
+    ENT  3
+    LEA  -1
+    PUSH
+    IMM  2
+    SI  
+4:     b = 3;
+    LEA  -2
+    PUSH
+    IMM  3
+    SI  
+5:     c = a + b;
+    LEA  -3
+    PUSH
+    LEA  -1
+    LI  
+    PUSH
+    LEA  -2
+    LI  
+    ADD 
+    SI  
+6:     return c;
+    LEA  -3
+    LI  
